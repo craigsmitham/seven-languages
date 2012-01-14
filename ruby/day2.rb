@@ -1,4 +1,4 @@
-load 'assignment.rb'
+require './assignment.rb'
 
 assignment "Print the contents of an array of sixteen numbers, "+ 
            "four numbers at a team, using just each." do
@@ -16,4 +16,9 @@ assignment "Now, do the same with each_slice in Enumberable." do
   array.each_slice(number_per_line) { |line| print line; puts; }
 end
 
+assignment "Create a cleaner implmentation for the Tree class that "+
+  "allows for initialization with nested structure of hashes" do
 
+  require './better_tree.rb'
+
+end

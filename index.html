@@ -22,8 +22,56 @@ $ "hello world".sub("hello", "good morning").sub("world", "america")
       <li>Information about Ruby's regular expressions: <a href="http://rubular.com/">Rubular</a>, a Ruby regular expression editor.</li>
       <li>Information about Ruby's ranges: <a href="http://www.ruby-doc.org/core-1.9.3/Range.html">Ruby Ranges Documentation (1.9.3)</a></li>
     </ul>
-
+    <h3>Day 2</h3>
+    Find:
+    <ul>
+      <li>Find out how to access files with and without code blocks. What is the benefit of the code block?
+        <ul>
+          <li>Use File.new() to access file without a code block, File.open() takes a code block</li>
+          <li>It seems using a code block allows you to process the file line by line. Using File.open seems to be a bit more granular</li>
+          <li>Great examples: <a href="http://pleac.sourceforge.net/pleac_ruby/fileaccess.html">http://pleac.sourceforge.net/pleac_ruby/fileaccess.html</a>
+          </li>
+        </ul>
+      </li>
+      <li>How would you translate a hash to an array? Can you tranlate arrays to hashes?
+      <ul>
+        <li><a href="http://stackoverflow.com/questions/4028329/array-to-hash-ruby">One way</a>:
+        <pre>
+>> array = ["stay", "classy", "san", "diego"]
+=> ["stay", "classy", "san", "diego"]
+>> hash = Hash[*array]
+=> {"san"=>"diego", "stay"=>"classy"} 
+</pre>
+        </li>
+        <li>I can imagine there are more pragmatic needs than this:
+        <pre>
+>> back_to_array= Array[*hash]
+=> [["san", "diego"], ["stay", "classy"]]
+</pre>
+        </li>
+      </ul>
       
+      </li>
+      <li>
+      Can you iterate through a hash?
+      <ul>
+        <li>I think I know how to do this!
+        <pre>
+>> hash.each {|key, value| puts "key: #{key}, value: #{value}"}
+key: san, value: diego
+key: stay, value: classy
+</pre>
+        </li>
+      </ul>
+      </li>
+      <li>You can use Ruby arrays as stacks. What other common data structures do arrays support?
+      <ul>
+        <li>It supports queue by using the <pre>shift</pre> and <pre>unshift</pre> operators</li>
+      <li>I'm not sure of other native data structures, but many can be implemented by extension</li>
+      <li>See <a href="http://www.informit.com/articles/article.aspx?p=26943">Manipulating Structured Data in Ruby</a> (Hal Fulton, InformIT)</li>
+    </ul>
+    </li>
+    </ul>
 
   </body>
 </html>

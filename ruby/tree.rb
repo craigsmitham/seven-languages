@@ -8,7 +8,7 @@ class Tree
 
   def visit_all(&block)
     visit &block
-    children.each {|c| c.visit_all &block}
+    @children.each {|c| c.visit_all &block}
   end
 
   def visit (&block)

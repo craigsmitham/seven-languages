@@ -1,4 +1,4 @@
-def assignment(title, &block)
+def assignment title, &block
   puts "\n\n--"
   puts title
   puts

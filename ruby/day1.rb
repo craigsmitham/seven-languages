@@ -1,4 +1,4 @@
-load 'assignment.rb' 
+load 'assignment.rb'
 
 assignment 'Print the string "Hello, world"' do
   puts "Hello World"
@@ -22,28 +22,27 @@ assignment 'Pring the string "This sentence number 1," where the number 1 change
   end
 end
 
-assignment 'Run a Ruby program from a file' do 
+assignment 'Run a Ruby program from a file' do
   puts "winning"
 end
 
 bonus "Write a program that picks a number and allow the player to guess" do
-  rand = rand(100)
+  target = rand 100
   guess = nil
   num_guesses = 0
-  until guess == rand
+  until guess == target 
     print "Enter your guess: "
     guess = gets.to_i
     num_guesses += 1
-    if guess == rand
+    if guess == target 
       puts "***************"
       puts "CONGRATULATIONS"
       puts "***************"
       puts "\nYou guessed in #{num_guesses} guesses"
-    elsif guess < rand
+    elsif guess < target 
       puts "\n guess HIGHER"
-    elsif guess > rand
+    elsif guess > target 
       puts "\n guess LOWER"
     end
   end
 end
-

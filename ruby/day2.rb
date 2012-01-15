@@ -22,3 +22,24 @@ assignment "Create a cleaner implmentation for the Tree class that "+
   require './better_tree.rb'
 
 end
+
+assignment "Create a simple grep that will print the lines of a file having "+
+  "any occurance of a phrase in that line" do
+  
+  def grep(phrase, file)
+    puts "Searching for \"#{phrase}\" in the file \"#{file}\"...\n\n"
+    
+    File.open(file, File::RDONLY) do |f|
+      line_number = 0
+      while line = f.gets
+        if /#{phrase}/.match line
+          puts "#{line_number}: #{line}"
+        end
+        line_number += 1
+      end
+      
+    end 
+  end
+
+  grep("assignment", "day2.rb")
+end
